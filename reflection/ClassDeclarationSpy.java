@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import static java.lang.System.out;
 
-public class ClassDeclarartionSpy {
+public class ClassDeclarationSpy {
    public static void main(String... args) {
       try {
          Class<?> c = Class.forName(args[0]);
          out.format("Class:%n %s%n%n", c.getCanonicalName());
          out.format("Modifiers:%n %s%n%n",
-            Modififier.toString(c.getModifiers()));
+            Modifier.toString(c.getModifiers()));
 
          out.format("Type Parameters:%n");
          TypeVariable[] tv = c.getTypeParameters();
@@ -63,7 +63,7 @@ public class ClassDeclarartionSpy {
          }
 
       } catch (ClassNotFoundException x) {
-         x.printStactTrace();
+         x.printStackTrace();
       }
    }
 
